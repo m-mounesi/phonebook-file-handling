@@ -8,6 +8,7 @@ public class ContactStorage {
         //For load method
         Scanner scanner;
 
+// it makes a phonebook.txt, we use it when phonebook.txt is not there. Like using app for the first time ...
     public void initstorage(){
             try {
                 writer = new BufferedWriter(new FileWriter("PhoneBook.txt", true));
@@ -27,6 +28,8 @@ public class ContactStorage {
             }
         }
 
+//        it overwrites an empty phonebook.txt, then writes data from hash-map to the file again
+//          because it is a txt file and doesnt have delete-row and update options like a database.
     public static void upload(){
         try {
             BufferedWriter writer;
@@ -41,7 +44,7 @@ public class ContactStorage {
         }
     }
 
-
+//   Reads  from PhoneBook.txt and puts into contact list hashmap
     public void load(){
         try {
             scanner = new Scanner(new File("PhoneBook.txt"));
@@ -54,6 +57,7 @@ public class ContactStorage {
 
             }
         } catch (FileNotFoundException e) {
+//            if file not found, creates a phonebook.txt file
             initstorage();
 //            throw new RuntimeException(e);
         }

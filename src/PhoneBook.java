@@ -66,6 +66,7 @@ public class PhoneBook {
         String number;
         System.out.println("Whats your contacts name you want to edit? ");
         name = scanner.next();
+//        First we check contact exits or not
         if (contactChecker(name)) {
             System.out.println("This is your contact now.");
             System.out.println(name + " : ");
