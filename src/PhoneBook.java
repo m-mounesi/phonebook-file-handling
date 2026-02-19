@@ -119,10 +119,6 @@ public class PhoneBook {
     public boolean contactChecker(String contact) {
         boolean num = contactList.containsKey(contact);
         boolean name = contactList.containsValue(contact);
-        if (num == true || name == true){
-            return true;
-        }else{
-            return false;
-        }
+        return num || name;
     }
 }
